@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    background-color: #EDB579;
+}
+
+ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 5px 0 5px 0;
+    margin: 0 20px 0 0;
+}
+
+a:hover {
+    color: unset;
+}
+
+a:active {
+    color: unset;
+}
+
+li {
+    width: 80px;
+    height: 30px;
+    background-color: #455C4F; 
+    border-style: solid;
+    border-color: coral;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #DBE6AF;
+    text-decoration: none;
+    font-size: 18px;  
+}
+
+.navbar {
+    background-color: #6D7696;
+}
+
+h1 {
+    text-align: center;
+}
+
+.OrderForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    width: 450px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px;
+    background-color: aliceblue;
+}
+
+input[type=submit] {
+     width: 100px;
+     float: right;
+}
+
+.FormInput {
+    margin-bottom: 20px;
+    float: right;
+}
+
+
+
+
