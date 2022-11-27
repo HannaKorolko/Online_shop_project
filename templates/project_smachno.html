@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="project_smachno.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='project_smachno.css') }}">
     <title>Delicious in Ukrainian</title>
 </head>
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="project_smachno.html">Home</a></li>
-            <li><a href="products.html">Menu</a></li>
-            <li><a href="order.html">Order</a></li>
+            <li><a href="{{ url_for('home', filename='project_smachno.html') }}">Home</a></li>
+            <li><a href="{{ url_for('menu', filename='products.html') }}">Menu</a></li>
+            <li><a href="{{ url_for('order', filename='order.html') }}">Order</a></li>
         </ul>
     </div>
     <div>
@@ -38,8 +38,5 @@
         </div>        
     </div>
     
-                    
-
-    <script src="project_smachno.js"></script>
 </body>
 </html>

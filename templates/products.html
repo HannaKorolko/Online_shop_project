@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="project_smachno.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='project_smachno.css') }}">
     <title>Menu</title>
 </head>
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="project_smachno.html">Home</a></li>
-            <li><a href="products.html">Menu</a></li>
-            <li><a href="order.html">Order</a></li>
+            <li><a href="{{ url_for('home', filename='project_smachno.html') }}">Home</a></li>
+            <li><a href="{{ url_for('menu', filename='products.html') }}">Menu</a></li>
+            <li><a href="{{ url_for('order', filename='order.html') }}">Order</a></li>
         </ul>
     </div>
     <h1 class="main_h1">PRICE-LIST</h1>
@@ -36,6 +36,6 @@
         </div>
     </div>                    
 
-    <script src="products.js"></script>   
+    <script src="{{ url_for('static', filename='products.js') }}"></script>   
 </body>
 </html>
