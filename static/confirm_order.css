@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    background-color: #EDB579;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0 15px;
+}
+
+div {
+    width: 50%;
+    margin-top: 120px;
+}

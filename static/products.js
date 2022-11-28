@@ -6,7 +6,7 @@ var src_2nd_img_wareniki = "https://pelmeshki.od.ua/wa-data/public/shop/products
 var src_1st_img_golubci = "https://www.recept.ua/files/uploads/rec_img/golubci-iz-svegey-kapusti.jpg"
 var src_2nd_img_golubci = "https://www.home-recipes.com.ua/wp-content/uploads/2021/04/golubcy-mjasnye-e6bada4.jpg"
 var src_1st_img_syrniki = "https://sites.psu.edu/jsc5483/wp-content/uploads/sites/16465/2014/09/2482222_orig.jpg"
-var src_2nd_img_syrniki = "https://ukr.media/static/ba/aimg/4/1/9/419850_1.jpg"
+var src_2nd_img_syrniki = "https://clutch.net.ua/crops/6c367e/1200x1200/2/0/2021/03/31/XMqbZLW46e8eRbfBuDpDNIaU3LjsA2WO3CGUgQLl.jpeg"
 var src_1st_img_pancakes = "https://shuba.life/static/content/thumbs/320x400/6/84/mwffoq---c320x400x50px50p-c320x400x50px50p-up--49e5669f372936d02bc2ae1b3ef36846.jpg"
 var src_2nd_img_pancakes = "http://gurman.co.ua/wp-content/uploads/2017/01/8ba692ae40904ed3030417525ff16379.jpg"
 

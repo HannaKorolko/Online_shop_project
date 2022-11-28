@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
+
 app = Flask(__name__)
+
 
 class Client:
     def __init__(self, name, email, address, order):
@@ -45,8 +47,18 @@ def order():
         total = 0
         for i in range(len(order_of_client)):
             total += order_of_client[i].sum_order_product()
+
+        if total >= 20:
+            total_discount = round(total*0.95, 2)
+            discount =  round(total - total_discount, 2)
+            total = total_discount
+        else:
+            discount = 0   
+
+        total_delivery = total + 15        
         
-        return render_template('confirm_order.html', total_sum=total)
+        return render_template('confirm_order.html', client=total_order.name, email=total_order.email, address=total_order.address,
+                                 total_sum=total, total_delivery = total_delivery, discount = discount)
 
     
 

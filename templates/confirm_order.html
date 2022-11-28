@@ -1,10 +1,17 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='confirm_order.css') }}">
         <title>Confirm order</title>
     </head>
     <body>
-        <h1>Total sum of order:</h1>
-        <h1>{{total_sum}}</h1>
-        
+        <div>
+            <p>{{client}}, an email  has been sent to your email {{email}}</p>
+            <p> with confirmation of your order and the invoice you need to pay.</p>
+            <p>The amount of your order: {{total_sum}}€.</p>
+            <p>The total amount of your order including delivery: {{total_delivery}}€.</p>
+            <p>Order will be delivered to {{address}}.</p>
+            <p>Your discount is:{{discount}}€.</p>
+        </div>
     </body>
 </html>
