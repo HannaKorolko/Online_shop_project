@@ -55,10 +55,16 @@ def order():
         else:
             discount = 0   
 
-        total_delivery = total + 15        
-        
+        total_delivery = total + 5
+
+        if total_delivery < 15:
+            message_not_deliv = "Your order is less than 15€, please add it so we can deliver it."
+        else:
+            message_not_deliv = ""    
         return render_template('confirm_order.html', client=total_order.name, email=total_order.email, address=total_order.address,
-                                 total_sum=total, total_delivery = total_delivery, discount = discount)
+                                 total_sum=total, total_delivery = total_delivery, discount = discount, message_not_deliv = message_not_deliv)
+
+             
 
     
 

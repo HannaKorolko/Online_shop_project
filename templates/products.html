@@ -7,34 +7,39 @@
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="{{ url_for('home', filename='project_smachno.html') }}">Home</a></li>
-            <li><a href="{{ url_for('menu', filename='products.html') }}">Menu</a></li>
-            <li><a href="{{ url_for('order', filename='order.html') }}">Order</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('order') }}">Order</a></li>
         </ul>
     </div>
-    <h1 class="main_h1">PRICE-LIST</h1>
+    <h1>PRICE-LIST</h1>
     <div class="menu_of_store" id="menu_of_store">
         <div class="photoAndPrice">
-            <img class="photo_of_product" id="wareniki_img" src="https://smachno.ua/wp-content/uploads/2012/05/10/varenikiskapustoj.jpg" alt="wareniki" />
-            <p>Vareniki with cabbage and porcini mushrooms</p>
+            <img class="photo_of_product" id="vareniki_img" src="https://smachno.ua/wp-content/uploads/2012/05/10/varenikiskapustoj.jpg" alt="Vareniki"/>
+            <p class="name_of_product">Vareniki with cabbage and porcini mushrooms</p>
             <p>7€/kg</p>
         </div>
         <div class="photoAndPrice">
-            <img class="photo_of_product" id="golubci_img" src="https://www.recept.ua/files/uploads/rec_img/golubci-iz-svegey-kapusti.jpg" alt="golubci" />
-            <p>Cabbage rolls with ground beef</p>
+            <img class="photo_of_product" id="golubci_img" src="https://www.recept.ua/files/uploads/rec_img/golubci-iz-svegey-kapusti.jpg" alt="Cabbage rolls"/>
+            <p class="name_of_product">Cabbage rolls with ground beef</p>
             <p class="price">8€/500g</p>
         </div>
         <div class="photoAndPrice">
-            <img class="photo_of_product" id="syrniki_img" src="https://sites.psu.edu/jsc5483/wp-content/uploads/sites/16465/2014/09/2482222_orig.jpg" alt="syrniki" />
-            <p>Cheese pancakes</p>
+            <img class="photo_of_product" id="syrniki_img"
+             src="https://sites.psu.edu/jsc5483/wp-content/uploads/sites/16465/2014/09/2482222_orig.jpg" alt="Cheese pancakes"/>
+            <p class="name_of_product">Cheese pancakes</p>
             <p class="price">6€/500g</p>
         </div>
         <div class="photoAndPrice">
-            <img class="photo_of_product" id="pancakes_img" src="https://shuba.life/static/content/thumbs/320x400/6/84/mwffoq---c320x400x50px50p-c320x400x50px50p-up--49e5669f372936d02bc2ae1b3ef36846.jpg" alt="pancakes" />
-            <p>Pancakes with salmon and cream cheese</p>
+            <img class="photo_of_product" id="pancakes_img" 
+            src="https://shuba.life/static/content/thumbs/320x400/6/84/mwffoq---c320x400x50px50p-c320x400x50px50p-up--49e5669f372936d02bc2ae1b3ef36846.jpg" alt="Pancakes with salmon"/>
+            <p class="name_of_product">Pancakes with salmon and cream cheese</p>
             <p>8€/500g</p>
         </div>
-    </div>                    
+    </div>    
+    <div class="discount">
+        <h2>When ordering 20€ or more you get a 5% discount!</h2>
+    </div>                
 
     <script src="{{ url_for('static', filename='products.js') }}"></script>   
 </body>

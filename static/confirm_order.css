@@ -15,3 +15,8 @@ div {
     width: 50%;
     margin-top: 120px;
 }
+
+.message_not_deliv {
+    color: red;
+}
+

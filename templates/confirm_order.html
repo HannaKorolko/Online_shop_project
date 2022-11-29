@@ -6,12 +6,13 @@
     </head>
     <body>
         <div>
-            <p>{{client}}, an email  has been sent to your email {{email}}</p>
-            <p> with confirmation of your order and the invoice you need to pay.</p>
-            <p>The amount of your order: {{total_sum}}€.</p>
-            <p>The total amount of your order including delivery: {{total_delivery}}€.</p>
+            <p>{{client}}, an email has been sent to your email {{email}}</p>
+            <p>with a confirmation and the invoice for your order.</p>
+            <p>The cost of your order: {{total_sum}}€.</p>
+            <p>The total cost of your order including delivery: {{total_delivery}}€.</p>
             <p>Order will be delivered to {{address}}.</p>
             <p>Your discount is:{{discount}}€.</p>
+            <p class="message_not_deliv">{{message_not_deliv}}</p>
         </div>
     </body>
 </html>

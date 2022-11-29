@@ -7,9 +7,9 @@
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="{{ url_for('home', filename='project_smachno.html') }}">Home</a></li>
-            <li><a href="{{ url_for('menu', filename='products.html') }}">Menu</a></li>
-            <li><a href="{{ url_for('order', filename='order.html') }}">Order</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('order') }}">Order</a></li>
         </ul>
     </div>
     <h1>Create you order</h1>
@@ -25,16 +25,16 @@
                 <label>Enter your address in Munich: <input name="address" type="text" required /></label>
             </div>
             <div class="FormInput">
-                <label>Vareniki(packing of 1kg): <input name="n_vareniki" type="number"/></label>
+                <label>Vareniki(1kg pack): <input name="n_vareniki" type="number" value="0"/></label>
             </div>
             <div class="FormInput">  
-                <label>Cabbage rolls(packing of 500g): <input name="n_cab_rolls" type="number"/></label>
+                <label>Cabbage rolls(500g pack): <input name="n_cab_rolls" type="number" value="0"/></label>
             </div>
             <div class="FormInput">
-                <label>Cheese pancakes(packing of 500g): <input name="n_cheese_pancakes" type="number"/></label>
+                <label>Cheese pancakes(500g pack): <input name="n_cheese_pancakes" type="number" value="0"/></label>
             </div>
             <div class="FormInput">  
-                <label>Pancakes with salmon(packing of 500g): <input name="n_pancakes_salmon" type="number"/></label>
+                <label>Pancakes with salmon(500g pack): <input name="n_pancakes_salmon" type="number" value="0"/></label>
             </div>        
             <div><input  type="submit" value="Send"></div> 
         </form>

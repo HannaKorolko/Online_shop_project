@@ -1,4 +1,4 @@
-var product_img= [document.getElementById('wareniki_img'), document.getElementById('golubci_img'),
+var product_img= [document.getElementById('vareniki_img'), document.getElementById('golubci_img'),
     document.getElementById('syrniki_img'), document.getElementById('pancakes_img')]
 var list_of_img = document.getElementById("menu_of_store")
 var src_1st_img_wareniki = "https://smachno.ua/wp-content/uploads/2012/05/10/varenikiskapustoj.jpg"
@@ -13,13 +13,15 @@ var src_2nd_img_pancakes = "http://gurman.co.ua/wp-content/uploads/2017/01/8ba69
 var src_1st_img_product = [src_1st_img_wareniki, src_1st_img_golubci, src_1st_img_syrniki, src_1st_img_pancakes]
 var src_2nd_img_product = [src_2nd_img_wareniki, src_2nd_img_golubci, src_2nd_img_syrniki, src_2nd_img_pancakes]
 
-    list_of_img.addEventListener('click', e => {
+list_of_img.addEventListener('click', e => {
 
-        for (i=0; i<product_img.length; i++) {
+    for (i=0; i<product_img.length; i++) {
             if (e.target === product_img[i]) {
                 if (product_img[i].src === src_1st_img_product[i]) {
                     product_img[i].src = src_2nd_img_product[i]
                 } else  {
-                    product_img[i].src = src_1st_img_product[i]      
-        }}}   
+                    product_img[i].src = src_1st_img_product[i]
+                }
+            }
+        }   
 })
