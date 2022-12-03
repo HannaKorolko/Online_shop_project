@@ -1,8 +1,9 @@
 body {
     height: 100vh;
-    background-color: #EDB579;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    background-color: 	#d2807c; 
 }
 
 p {
@@ -11,12 +12,35 @@ p {
     margin: 15px 0 15px;
 }
 
-div {
-    width: 50%;
-    margin-top: 120px;
+.main_container {
+    background-image: url("IMG_20221203_162452_559_b.png");
+    background-size: cover;
+    width: 700px;
+    height: 410px;
+    
+    /*margin-top: 15%; */
+    /* margin-left: 30%; */
 }
 
+.main_container_text {
+    position: absolute;
+    margin: 20px 50px;
+}
 .message_not_deliv {
     color: red;
 }
+
+.order_container {
+    padding: 3px;
+    width: 250px;
+    background-color: #DBE6AF;
+    border-color: #455C4F;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+
+
+
 

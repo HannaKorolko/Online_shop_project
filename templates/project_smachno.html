@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='project_smachno.css') }}">
     <title>Delicious in Ukrainian</title>
 </head>
-<body>
-    <div class="navbar">
-        <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('menu') }}">Menu</a></li>
-            <li><a href="{{ url_for('order') }}">Order</a></li>
-        </ul>
-    </div>
-    <div>
-        <h1>Welcome to the online store</h1>
-        <h1>DELICIOUS IN UKRAINIAN</h1>
-        <div class="home_info">
-            <img class="home_img" src="https://spadok.org.ua/images/bojkivks-kuhnia.webp" alt="Ukrainian food"/>
-            <p class="home_p" id="main_text">
-                Do you work a lot and not have time to cook?
-                Have you never been in Ukraine and tried Ukrainian dishes?
-                Or are you from Ukraine and miss your native food?
-                Maybe you are a restaurant owner and want to diversify your menu?
-                Then you are on the right site! We will be happy to fulfil your order.
-                All products are made by our Ukrainian employees with soul and only from fresh,
-                high-quality products.
-            </p> 
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                <li><a href="{{ url_for('order') }}">Order</a></li>
+            </ul>
         </div>
         <div>
-            <p class="home_p">
-                We deliver in Munich for orders of 15€ or more.
-                <br>
-                Cost of delivery: 5€.
-                <br>
-                You can also visit our shop at Baum 10, Munich.
-            </p>
-        </div>        
-    </div>
-    
-</body>
+            <h1>Welcome to the online store</h1>
+            <h1>DELICIOUS IN UKRAINIAN</h1>
+            <div class="home_info">
+                <img class="home_img" src="https://spadok.org.ua/images/bojkivks-kuhnia.webp" alt="Ukrainian food"/>
+                <p class="home_p" id="main_text">
+                    Do you work a lot and not have time to cook?
+                    Have you never been in Ukraine and tried Ukrainian dishes?
+                    Or are you from Ukraine and miss your native food?
+                    Maybe you are a restaurant owner and want to diversify your menu?
+                    Then you are on the right site! We will be happy to fulfil your order.
+                    All products are made by our Ukrainian employees with soul and only from fresh,
+                    high-quality products.
+                </p> 
+            </div>
+            <div>
+                <p class="home_p">
+                    We deliver in Munich for orders of 15€ or more.
+                    <br>
+                    Cost of delivery: 5€.
+                    <br>
+                    You can also visit our shop at Baum 10, Munich.
+                </p>
+            </div>        
+        </div>
+        
+    </body>
 </html>

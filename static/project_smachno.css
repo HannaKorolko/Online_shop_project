@@ -100,7 +100,19 @@ h1 {
 }
 
 .discount {
+    position: absolute;
     margin-top: 100px;
+    bottom: 15%;
+    left: 25%;
+    -webkit-animation: linear; 
+    -webkit-animation-name: runDiscount;
+    -webkit-animation-duration: 6s;
+}
+
+@-webkit-keyframes runDiscount {
+    0%   { left:  0;  }
+    66%  { left: 50%; }
+    100% { left: 25%; }   
 }
 
 h2 {

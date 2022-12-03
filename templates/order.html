@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
     <title>Order</title>
 </head>
-<body>
-    <div class="navbar">
-        <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('menu') }}">Menu</a></li>
-            <li><a href="{{ url_for('order') }}">Order</a></li>
-        </ul>
-    </div>
-    <h1>Create you order</h1>
-    <div class="OrderForm">
-        <form method="post" id="addOrderForm">
-            <div class="FormInput">
-                <label>Enter your name: <input name="clientname" type="text" required /></label>
-            </div>
-            <div class="FormInput">  
-                <label>Enter your email: <input name="email" type="email" required /></label>
-            </div>
-            <div class="FormInput">
-                <label>Enter your address in Munich: <input name="address" type="text" required /></label>
-            </div>
-            <div class="FormInput">
-                <label>Vareniki(1kg pack): <input name="n_vareniki" type="number" value="0"/></label>
-            </div>
-            <div class="FormInput">  
-                <label>Cabbage rolls(500g pack): <input name="n_cab_rolls" type="number" value="0"/></label>
-            </div>
-            <div class="FormInput">
-                <label>Cheese pancakes(500g pack): <input name="n_cheese_pancakes" type="number" value="0"/></label>
-            </div>
-            <div class="FormInput">  
-                <label>Pancakes with salmon(500g pack): <input name="n_pancakes_salmon" type="number" value="0"/></label>
-            </div>        
-            <div><input  type="submit" value="Send"></div> 
-        </form>
-    </div>                  
-          
-    <script src="order.js"></script>   
-</body>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                <li><a href="{{ url_for('order') }}">Order</a></li>
+            </ul>
+        </div>
+        <h1>Create you order</h1>
+        <div class="OrderForm" id="OrderForm">
+            <form method="post" id="addOrderForm">
+                <div class="FormInput">
+                    <label>Enter your name: <input name="clientname" type="text" required /></label>
+                </div>
+                <div class="FormInput">  
+                    <label>Enter your email: <input name="email" type="email" required /></label>
+                </div>
+                <div class="FormInput">
+                    <label>Enter your address in Munich: <input name="address" type="text" required /></label>
+                </div>
+                <div class="FormInput">
+                    <label>Vareniki(1kg pack): <input name="n_vareniki" type="number" value="0"/></label>
+                </div>
+                <div class="FormInput">  
+                    <label>Cabbage rolls(500g pack): <input name="n_cab_rolls" type="number" value="0"/></label>
+                </div>
+                <div class="FormInput">
+                    <label>Cheese pancakes(500g pack): <input name="n_cheese_pancakes" type="number" value="0"/></label>
+                </div>
+                <div class="FormInput">  
+                    <label>Pancakes with salmon(500g pack): <input name="n_pancakes_salmon" type="number" value="0"/></label>
+                </div>        
+                <div><input  type="submit" value="Send"></div> 
+            </form>
+        </div>  
+    </body>
 </html>
