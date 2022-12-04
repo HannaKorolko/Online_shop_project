@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='confirm_order.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='confirm-order.css') }}">
         <title>Confirm order</title>
     </head>
     <body>
@@ -14,7 +14,7 @@
                 <p>The total cost of your order including delivery: {{total_delivery}}€.</p>
                 <p>{{address}}</p>
                 <p>Your discount is: {{discount}}€.</p>
-                <p class="message_not_deliv">{{message_not_deliv}}</p>
+                <p class="message_not_deliv">{{message_not_deliv}}<br>{{message_not_deliv2}}</p>
             </div>
         </div>
     </body>

@@ -18,14 +18,18 @@ class Product:
         self.name = name
         self.amount = amount
         self.price = price
+    
     def __repr__(self):
         return self.name + " " + str(self.amount) + " pack by price: " + str(self.price) + "€"
+        
     def sum_order_product(self):
+        if self.amount == "":
+            self.amount = "0" 
         return int(self.amount)*int(self.price)
 
 @app.route('/')
 def home():
-    return render_template('project_smachno.html')
+    return render_template('project-shop.html')
 
 @app.route('/menu/')
 def menu():
@@ -43,15 +47,16 @@ def order():
 
             order_of_client = [Product("vareniki", n_vareniki, 7), Product("cab_rolls", n_cab_rolls, 8),
                             Product("cheese_pancakes", n_cheese_pancakes, 6), Product("pancakes_salmon", n_pancakes_salmon, 8)]  
+            
             total_order = Client(str(request.form["clientname"]), str(request.form["email"]), str(request.form["address"]), order_of_client)
 
             text_order = ""
             for i in range(len(order_of_client)):
-                if int(order_of_client[i].amount) > 0:
+                if order_of_client[i].amount != "0" and order_of_client[i].amount !="":
                     name_product = order_of_client[i].name
                     while len(name_product) < 22:
                         name_product += "_" 
-                    text_order += f'{name_product} : {order_of_client[i].amount} pack '   
+                    text_order += f'{name_product} : {int(order_of_client[i].amount)} pack '   
 
             total = 0
             for i in range(len(order_of_client)):
@@ -69,19 +74,21 @@ def order():
             if total_delivery < 15:
                 text_head = "Order not confirmed!"
                 text_email = f'{total_order.name}, you ordered:'
-                message_not_deliv = "Your order is less than 15€, please add it so we can deliver it."
+                message_not_deliv = "Your order is less than 15€,"
+                message_not_deliv2 = "please add more so we can deliver it."
                 text_address = ""
                         
             else:
                 text_head = "Thanks for your order!"
                 message_not_deliv = "" 
+                message_not_deliv2 = ""
                 text_email = f"""{total_order.name}, an email has been sent to {total_order.email}
                              with a confirmation and the invoice for your order:"""   
                 text_address = f'Order will be delivered to {total_order.address}.'
             variables = {"text_head" : text_head, "text_email" : text_email, "address" : text_address, 
                         "text_order" : text_order,  "total_sum" : total, "total_delivery" : total_delivery, 
-                        "discount" : discount, "message_not_deliv" : message_not_deliv}   
-            return render_template('confirm_order.html', **variables)
+                        "discount" : discount, "message_not_deliv" : message_not_deliv, "message_not_deliv2" : message_not_deliv2}   
+            return render_template('confirm-order.html', **variables)
 
 
             

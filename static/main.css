@@ -41,9 +41,10 @@ a {
     background-color: #6D7696;
 }
 
-.home_img {
-    width: 50%;
+.home-img {
+    width: 50vw;
 }
+
 h1 {
     font-family: cursive;
     text-align: center;
@@ -52,46 +53,47 @@ h1 {
     margin-top: 0;
 }
 
-.home_p {
+.home-text {
     font-size: 25px;
     font-weight: bold;
 }
 
-#main_text {
+.main-text {
     margin-left: auto;
     margin-right: auto;
     width: 450px;
 }
 
-.home_info {
+.test-about-shop {
     display: flex;
     padding-top: 10px;
 }
 
-.menu_of_store {
+.menu-of-shop {
     display: flex;
     justify-content: space-evenly;
 }
-.photoAndPrice {
+
+.menu-item {
     width: 300px;
     height: 330px;
     border-color: #455c4f;
     border-style: solid;    
 }
 
-.photo_of_product {
+.menu-item-img {
     width: 300px;
     height: 210px;
     cursor: pointer;
 }
 
-.menu_of_store p {
+.menu-of-shop p {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
 
-.name_of_product {
+.menu-item-name {
     color:#59484F;
 }
 
@@ -101,18 +103,19 @@ h1 {
 
 .discount {
     position: absolute;
-    margin-top: 100px;
-    bottom: 15%;
-    left: 25%;
-    -webkit-animation: linear; 
-    -webkit-animation-name: runDiscount;
-    -webkit-animation-duration: 6s;
+    top: 75vh;
+    width: 790px;
+    text-align: center;
+    left: calc((100vw - 790px) / 2);
+    animation: linear; 
+    animation-name: discountText;
+    animation-duration: 4s;
 }
 
-@-webkit-keyframes runDiscount {
-    0%   { left:  0;  }
-    66%  { left: 50%; }
-    100% { left: 25%; }   
+@keyframes discountText {
+    0%   { left: 15vw;  }
+    66%  { left: calc(85vw - 790px); }
+    100% { left: calc((100vw - 790px) / 2); }
 }
 
 h2 {

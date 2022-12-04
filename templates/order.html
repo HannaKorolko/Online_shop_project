@@ -13,28 +13,36 @@
             </ul>
         </div>
         <h1>Create you order</h1>
-        <div class="OrderForm" id="OrderForm">
-            <form method="post" id="addOrderForm">
-                <div class="FormInput">
+        <div class="order-form">
+            <form method="post">
+                <div class="form-input">
                     <label>Enter your name: <input name="clientname" type="text" required /></label>
                 </div>
-                <div class="FormInput">  
+                <div class="form-input">  
                     <label>Enter your email: <input name="email" type="email" required /></label>
                 </div>
-                <div class="FormInput">
+                <div class="form-input">
                     <label>Enter your address in Munich: <input name="address" type="text" required /></label>
                 </div>
-                <div class="FormInput">
-                    <label>Vareniki(1kg pack): <input name="n_vareniki" type="number" value="0"/></label>
+                <div class="form-input">
+                    <label>
+                        Vareniki(7€/kg pack): <input name="n_vareniki" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                    </label>
                 </div>
-                <div class="FormInput">  
-                    <label>Cabbage rolls(500g pack): <input name="n_cab_rolls" type="number" value="0"/></label>
+                <div class="form-input">  
+                    <label>
+                        Cabbage rolls(8€/500g pack): <input name="n_cab_rolls" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                    </label>
                 </div>
-                <div class="FormInput">
-                    <label>Cheese pancakes(500g pack): <input name="n_cheese_pancakes" type="number" value="0"/></label>
+                <div class="form-input">
+                    <label>
+                        Cheese pancakes(6€/500g pack): <input name="n_cheese_pancakes" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                    </label>
                 </div>
-                <div class="FormInput">  
-                    <label>Pancakes with salmon(500g pack): <input name="n_pancakes_salmon" type="number" value="0"/></label>
+                <div class="form-input">  
+                    <label>
+                        Pancakes with salmon(8€/500g pack): <input name="n_pancakes_salmon" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                    </label>
                 </div>        
                 <div><input  type="submit" value="Send"></div> 
             </form>

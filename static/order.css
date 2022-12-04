@@ -45,7 +45,7 @@ h1 {
     text-align: center;
 }
 
-.OrderForm {
+.order-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,7 @@ input[type=submit] {
      float: right;
 }
 
-.FormInput {
+.form-input {
     margin-bottom: 20px;
     float: right;
 }
