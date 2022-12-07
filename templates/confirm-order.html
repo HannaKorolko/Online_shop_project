@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='confirm-order.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
         <title>Confirm order</title>
     </head>
     <body>
-        <div class="main_container">
-            <div class="main_container_text">
-                <h1>{{text_head}}</h1>
-                <p>{{text_email}}</p>
-                <div class="order_container">{{text_order}}</div>
-                <p>The cost of your order: {{total_sum}}€.</p>
-                <p>The total cost of your order including delivery: {{total_delivery}}€.</p>
-                <p>{{address}}</p>
-                <p>Your discount is: {{discount}}€.</p>
-                <p class="message_not_deliv">{{message_not_deliv}}<br>{{message_not_deliv2}}</p>
-            </div>
+        <div class="contact-info" id="contact-info-confirm">
+            <pre>CONTACT INFO:       Phone: 0151-000-0000       Hours of operation: 8am - 8pm Monday - Sunday</pre>   
         </div>
+        <div class="confirm-text">
+            <h1>{{textHead}}</h1>
+            <p>{{textConfirm}}</p>
+            <div class="clients-order">{{textOfOrder}}</div>
+            <p>The cost of your order: {{totalSum}}€.</p>
+            <p>The total cost of your order including delivery: {{deliveryInclud}}€.</p>
+            <p>{{address}}</p>
+            <p>Your discount is: {{discount}}€.</p>
+            <p class="message-not-deliv">{{messageNotDeliv}}<br>{{messageNotDeliv2}}</p>
+        </div>
+
+        <script src="{{ url_for('static', filename='order.js') }}"></script>  
     </body>
 </html>

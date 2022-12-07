@@ -45,7 +45,7 @@ a {
     width: 50vw;
 }
 
-h1 {
+.title {
     font-family: cursive;
     text-align: center;
     color: #59484F;
@@ -118,7 +118,7 @@ h1 {
     100% { left: calc((100vw - 790px) / 2); }
 }
 
-h2 {
+.discount-text {
     text-align: center;
     font-size: 35px;
     color: rebeccapurple;

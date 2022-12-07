@@ -9,7 +9,7 @@ class Client:
         self.email = email
         self.address = address
         self.order = order
-        
+              
     def __repr__(self):
         return self.name + ", email: " + self.email + ", address: " + self.address + ", order: " + str(self.order)
         
@@ -21,11 +21,18 @@ class Product:
     
     def __repr__(self):
         return self.name + " " + str(self.amount) + " pack by price: " + str(self.price) + "€"
-        
-    def sum_order_product(self):
+
+    def totalCostProduct(self):
         if self.amount == "":
             self.amount = "0" 
-        return int(self.amount)*int(self.price)
+        return int(self.amount)*int(self.price) 
+
+def totalCostOrder(order):
+    total = 0
+    for i in range(len(order)):
+        total += order[i].totalCostProduct() 
+    return total      
+
 
 @app.route('/')
 def home():
@@ -37,58 +44,56 @@ def menu():
 
 @app.route('/order/', methods=["GET","POST"])
 def order():
-        if request.method == "GET":
-            return render_template('order.html')
-        else: 
-            n_vareniki = request.form["n_vareniki"]
-            n_cab_rolls = request.form["n_cab_rolls"]
-            n_cheese_pancakes = request.form["n_cheese_pancakes"]
-            n_pancakes_salmon = request.form["n_pancakes_salmon"]      
-
-            order_of_client = [Product("vareniki", n_vareniki, 7), Product("cab_rolls", n_cab_rolls, 8),
-                            Product("cheese_pancakes", n_cheese_pancakes, 6), Product("pancakes_salmon", n_pancakes_salmon, 8)]  
+    if request.method == "GET":
+        return render_template('order.html')
+    else: 
+        menuOfshop = [Product("vareniki", request.form["nvareniki"], 7),
+                            Product("cab_rolls", request.form["ncabrolls"], 8),
+                            Product("cheese-pancakes", request.form["ncheesepancakes"], 6), 
+                            Product("pancakes-salmon", request.form["npancakessalmon"], 8)]  
             
-            total_order = Client(str(request.form["clientname"]), str(request.form["email"]), str(request.form["address"]), order_of_client)
+        clientsOrder = Client(str(request.form["clientname"]), str(request.form["email"]), str(request.form["address"]), menuOfshop)
 
-            text_order = ""
-            for i in range(len(order_of_client)):
-                if order_of_client[i].amount != "0" and order_of_client[i].amount !="":
-                    name_product = order_of_client[i].name
-                    while len(name_product) < 22:
-                        name_product += "_" 
-                    text_order += f'{name_product} : {int(order_of_client[i].amount)} pack '   
+        textOforder = ""
+        for i in range(len(menuOfshop)):
+            if menuOfshop[i].amount != "0" and menuOfshop[i].amount !="":
+                nameOfproduct = menuOfshop[i].name
+                while len(nameOfproduct) < 22:
+                    nameOfproduct += "_" 
+                textOforder += f'{nameOfproduct} : {int(menuOfshop[i].amount)} pack '   
 
-            total = 0
-            for i in range(len(order_of_client)):
-                total += order_of_client[i].sum_order_product()
+        textHead = "Order not confirmed!"    
+        discount = 0
+        totalSum = totalCostOrder(menuOfshop)
 
-            if total >= 20:
-                total_discount = round(total*0.95, 2)
-                discount =  round(total - total_discount, 2)
-                total = total_discount
+        if totalSum == 0:
+            messageNotDeliv = messageNotDeliv2 = textAddress = ""  
+            deliveryInclud = 0
+            textConfirm = "You didn't order anything."
+        else:    
+            if totalSum >= 20:
+                discountSum = round(totalSum*0.95, 2)
+                discount =  round(totalSum - discountSum, 2)
+                totalSum = discountSum
+
+            deliveryInclud = totalSum + 5
+
+            if deliveryInclud < 15:
+                textConfirm = f'{clientsOrder.name}, you ordered:'
+                messageNotDeliv = "Your order is less than 15€,"
+                messageNotDeliv2 = "please add more so we can deliver it."
+                textAddress = ""            
             else:
-                discount = 0   
+                textHead = "Thanks for your order!"
+                messageNotDeliv = messageNotDeliv2 = "" 
+                textConfirm = f"""{clientsOrder.name}, an email has been sent to {clientsOrder.email}
+                                with a confirmation and the invoice for your order:"""   
+                textAddress = f'Order will be delivered to {clientsOrder.address}.'
+        variables = {"textHead" : textHead, "textConfirm" : textConfirm, "address" : textAddress, 
+                    "textOfOrder" : textOforder,  "totalSum" : totalSum, "deliveryInclud" : deliveryInclud, 
+                    "discount" : discount, "messageNotDeliv" : messageNotDeliv, "messageNotDeliv2" : messageNotDeliv2}   
+        return render_template('confirm-order.html', **variables)
 
-            total_delivery = total + 5
-
-            if total_delivery < 15:
-                text_head = "Order not confirmed!"
-                text_email = f'{total_order.name}, you ordered:'
-                message_not_deliv = "Your order is less than 15€,"
-                message_not_deliv2 = "please add more so we can deliver it."
-                text_address = ""
-                        
-            else:
-                text_head = "Thanks for your order!"
-                message_not_deliv = "" 
-                message_not_deliv2 = ""
-                text_email = f"""{total_order.name}, an email has been sent to {total_order.email}
-                             with a confirmation and the invoice for your order:"""   
-                text_address = f'Order will be delivered to {total_order.address}.'
-            variables = {"text_head" : text_head, "text_email" : text_email, "address" : text_address, 
-                        "text_order" : text_order,  "total_sum" : total, "total_delivery" : total_delivery, 
-                        "discount" : discount, "message_not_deliv" : message_not_deliv, "message_not_deliv2" : message_not_deliv2}   
-            return render_template('confirm-order.html', **variables)
 
 
             

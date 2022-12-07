@@ -11,10 +11,18 @@
                 <li><a href="{{ url_for('menu') }}">Menu</a></li>
                 <li><a href="{{ url_for('order') }}">Order</a></li>
             </ul>
-        </div>
-        <h1>Create you order</h1>
-        <div class="order-form">
+        </div>      
+        <div class="container">
+            <div class="add-info">
+                <div class="add-info-text" id="discount">
+                    When ordering 20€ or more you get a 5% discount!
+                </div>
+                <div class="add-info-text" id="delivery">
+                    We deliver in Munich for orders of 15€ or more.
+                </div>
+            </div>
             <form method="post">
+                <h1 class="heading">Create you order</h1>
                 <div class="form-input">
                     <label>Enter your name: <input name="clientname" type="text" required /></label>
                 </div>
@@ -26,26 +34,31 @@
                 </div>
                 <div class="form-input">
                     <label>
-                        Vareniki(7€/kg pack): <input name="n_vareniki" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                        Vareniki(7€/kg pack): <input name="nvareniki" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
                     </label>
                 </div>
                 <div class="form-input">  
                     <label>
-                        Cabbage rolls(8€/500g pack): <input name="n_cab_rolls" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                        Cabbage rolls(8€/500g pack): <input name="ncabrolls" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
                     </label>
                 </div>
                 <div class="form-input">
                     <label>
-                        Cheese pancakes(6€/500g pack): <input name="n_cheese_pancakes" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                        Cheese pancakes(6€/500g pack): <input name="ncheesepancakes" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
                     </label>
                 </div>
                 <div class="form-input">  
                     <label>
-                        Pancakes with salmon(8€/500g pack): <input name="n_pancakes_salmon" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
+                        Pancakes with salmon(8€/500g pack): <input name="npancakessalmon" type="number" value="0" min="0" oninput="validity.valid||(value='')"/>
                     </label>
                 </div>        
                 <div><input  type="submit" value="Send"></div> 
             </form>
-        </div>  
+        </div>
+        <div class="contact-info">
+            <pre>CONTACT INFO:       Phone: 0151-000-0000       Hours of operation: 8am - 8pm Monday - Sunday</pre>   
+        </div> 
+         
+        <script src="{{ url_for('static', filename='order.js') }}"></script>  
     </body>
 </html>

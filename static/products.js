@@ -27,7 +27,7 @@ menu.addEventListener('click', e => {
                 }
                 else  {
                     imgProductSrc[i].src = productImg[i][1]
-                }
+                }                
             }
     }   
 })
