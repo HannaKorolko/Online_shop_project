@@ -6,13 +6,13 @@ Instructions:
 2. Create a new folder and clone repository.
 3. Go into this folder and create a virtual environment:
 
-py –m venv <name>
+py –m venv name-of-venv
 
 4. Activate the virtual environment type:
 
-source <name>/bin/activate (Linux/Mac)
+source name-of-venv/bin/activate (Linux/Mac)
 
-<name>\Scripts\activate (Windows)
+name-of-venv\Scripts\activate (Windows)
 
 5. Install Flask:
 
