@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 
+
 app = Flask(__name__)
 
 
@@ -31,16 +32,18 @@ def totalCostOrder(order):
     total = 0
     for i in range(len(order)):
         total += order[i].totalCostProduct() 
-    return total      
+    return total     
 
 
 @app.route('/')
 def home():
     return render_template('project-shop.html')
 
+
 @app.route('/menu/')
 def menu():
     return render_template('products.html')
+
 
 @app.route('/order/', methods=["GET","POST"])
 def order():
@@ -65,7 +68,7 @@ def order():
         textHead = "Order not confirmed!"    
         discount = 0
         totalSum = totalCostOrder(menuOfshop)
-
+        
         if totalSum == 0:
             messageNotDeliv = messageNotDeliv2 = textAddress = ""  
             deliveryInclud = 0
@@ -93,30 +96,3 @@ def order():
                     "textOfOrder" : textOforder,  "totalSum" : totalSum, "deliveryInclud" : deliveryInclud, 
                     "discount" : discount, "messageNotDeliv" : messageNotDeliv, "messageNotDeliv2" : messageNotDeliv2}   
         return render_template('confirm-order.html', **variables)
-
-
-
-            
-
-          
-    
-
-        
-
-
-
-
-
-
-
-
-
-             
-
-    
-
-
-
-
-
-
